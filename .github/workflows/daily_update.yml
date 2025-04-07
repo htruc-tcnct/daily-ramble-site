@@ -1,0 +1,45 @@
+name: Update Daily Ramble
+
+on:
+  schedule:
+    # Chạy vào 1h sáng UTC mỗi ngày (8h sáng Việt Nam) - Có thể đổi giờ
+    - cron: '0 1 * * *'
+  workflow_dispatch: # Cho phép chạy thủ công
+
+jobs:
+  update_content:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Cần quyền để commit và push code
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10' # Chọn phiên bản Python
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install google-generativeai # Chỉ cần cài thư viện này
+
+    - name: Run script to generate and update ramble
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # Lấy key từ secrets
+      run: python ./scripts/generate_ramble.py # Chạy script Python
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        # Kiểm tra xem file có thay đổi không trước khi commit
+        if git diff --quiet _data/daily_ramble.json; then # Thay đúng đường dẫn file
+          echo "No changes to commit."
+        else
+          git add _data/daily_ramble.json # Thay đúng đường dẫn file
+          git commit -m "Update daily ramble - $(date +'%Y-%m-%d')"
+          git push
+        fi
