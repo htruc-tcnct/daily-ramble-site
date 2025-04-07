@@ -36,7 +36,7 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         # Kiểm tra xem file có thay đổi không trước khi commit
-        if git diff --quiet _data/daily_ramble.json; then # Thay đúng đường dẫn file
+        if git diff --quiet data/daily_ramble.json; then # Thay đúng đường dẫn file
           echo "No changes to commit."
         else
           git add _data/daily_ramble.json # Thay đúng đường dẫn file
