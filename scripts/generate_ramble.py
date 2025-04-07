@@ -47,18 +47,29 @@ try:
     daily_seed_word = random.choice(seed_words)
 
     # --- Xây dựng prompt HOÀN CHỈNH (bao gồm nội dung cũ) ---
-    prompt = f"""Mục tiêu: Viết một đoạn độc thoại nội tâm ngắn (khoảng 150-250 từ) thể hiện góc nhìn của một nhân vật với các đặc điểm đã mô tả, nhưng phải đảm bảo sự khác biệt hoàn toàn so với nội dung ngày hôm qua ({previous_ramble}). Tập trung vào việc tạo ra một mạch suy nghĩ, cách diễn đạt và tình huống mới lạ.
+    prompt = f"""
+Nhiệm vụ: Hãy hóa thân và viết một đoạn độc thoại nội tâm ngắn (khoảng 150-250 từ) của một nhân vật mà tâm trí họ giống như một trình duyệt web mở 50 tab cùng lúc, nhạc nhảy bật volume max, và vừa uống liền 3 ly cà phê đậm. Đoạn độc thoại này cần phản ánh sự ảnh hưởng tinh tế từ từ khóa của ngày hôm đó.
 
-Năng lượng Cực Cao & Bất ổn: Vẫn là cốt lõi, nhưng biểu hiện theo cách khác (VD: không phải là sự phấn khích bề ngoài, mà là dòng suy nghĩ dồn dập, không ngừng nghỉ bên trong).
-Lạc quan Phi lý Trí (Toxic Positivity Kiểu Hài Hước): Tìm một góc độ mới để thể hiện sự lạc quan này, có thể liên quan đến tình huống cụ thể trong độc thoại.
-Tư duy Hỗn loạn & Nhảy cóc (Stream of Consciousness): Cấu trúc dòng suy nghĩ phải khác hôm qua. Thay vì liệt kê, có thể là những câu hỏi dồn dập, những liên tưởng xa vời, sự tự ngắt lời...
-Ngôn ngữ "Vietglish" Sáng tạo: Dùng các từ/cụm từ Vietglish khác hoặc kết hợp chúng theo cách mới. Tránh lặp lại y hệt các ví dụ đã dùng nhiều lần.
-Chốt hạ bằng một Lời Khuyên "Chân Lý" Ngớ Ngẩn: Vẫn giữ yêu cầu này, đặt gần cuối, chỉ MỘT lời khuyên duy nhất, nhưng nội dung lời khuyên phải khác và có vẻ "sâu sắc" một cách hài hước.
-Giọng điệu & Phong cách: Hướng đến sự tự nhiên hơn trong sự hỗn loạn, có thể thêm chút tự giễu hoặc hoang mang nhẹ.
-Yếu tố THEN CHỐT - Từ khóa Ngẫu nhiên: Từ khóa hôm nay là '{daily_seed_word}'. Hãy để nó xen vào một cách bất ngờ, nhưng có thể liên kết (dù chỉ là mong manh) với dòng suy nghĩ trước đó hoặc sau đó.
-BỐI CẢNH QUAN TRỌNG - Nội dung ngày hôm qua:
+Yêu cầu về "Chất liệu" bên trong:
 
-Nội dung đã tạo ngày hôm qua là {previous_ramble}. Tuyệt đối không lặp lại câu mở đầu, các ý tưởng chính, cấu trúc câu hay cách dùng từ đặc trưng của đoạn văn này. Phải tạo ra một trải nghiệm đọc hoàn toàn khác biệt.
+Nhịp điệu Nền Tảng: Vẫn là suy nghĩ dồn dập, không đi theo đường thẳng, nhảy ý liên tục, câu chữ như đang "nhảy múa". Đây là cốt lõi không đổi.
+"Filter" Lạc Quan (Kiểu Hài): Vẫn giữ lăng kính tích cực hơi lố, biến mọi thứ thành "tín hiệu vũ trụ" hoặc cơ hội "level up" một cách hài hước.
+Ngôn ngữ "Hybrid" Tự Nhiên: Tiếp tục sử dụng Vietglish đời thường, sáng tạo ("OMG", "seriously?", "chốt đơn", "on top", "deadline dí", "so deep", "flex", "vibe"...).
+Ảnh Hưởng Tinh Tế Từ Từ Khóa ({daily_seed_word}): Đây là điểm mới quan trọng:
+Cảm nhận 'Năng Lượng' Từ Khóa: Hãy xem xét ý nghĩa, sắc thái, hoặc cảm giác mà {daily_seed_word} gợi ra.
+Điều Chỉnh Phong Cách Nhẹ Nhàng: Để 'năng lượng' này thoáng ảnh hưởng đến giọng điệu hoặc dòng suy nghĩ. Ví dụ:
+Nếu từ khóa là "yên bình", có thể có một khoảnh khắc suy tư ngắn, một câu hỏi về sự tĩnh lặng xen giữa mớ hỗn độn (nhưng rồi nhanh chóng bị dòng khác cuốn đi).
+Nếu từ khóa là "bùng nổ", nhịp điệu có thể càng nhanh, nhiều dấu chấm than hơn.
+Nếu từ khóa là "ẩm thực", liên tưởng về mùi vị, hình ảnh món ăn có thể xuất hiện rõ nét hơn.
+Quan Trọng: Sự điều chỉnh này phải tinh tế, không làm mất đi bản chất năng lượng cao, hỗn loạn và lạc quan cốt lõi của nhân vật. Nó giống như thêm một chút "gia vị" khác nhau mỗi ngày.
+Tích Hợp Từ Khóa: Từ khóa {daily_seed_word} phải xuất hiện trong đoạn văn. Nó có thể là điểm bắt đầu cho sự ảnh hưởng tinh tế nói trên, hoặc đơn giản là một yếu tố xen ngang bất ngờ.
+Khoảnh khắc "Eureka!" Ngớ Ngẩn: Vẫn kết thúc bằng MỘT câu "chân lý" hoặc lời khuyên độc đáo, nghe sâu sắc nhưng thực chất lại vô tri hoặc hài hước (gần cuối đoạn, 1-2 câu).
+Thách Thức Sáng Tạo:
+
+Quên Hẳn Hôm Qua: Tuyệt đối tránh lặp lại nội dung ({previous_ramble}) và phong cách của ngày hôm trước. Mỗi ngày là một bản phối mới dựa trên cùng một nền nhạc.
+Bối Cảnh Gợi Ý (Không bắt buộc): Vẫn có thể đặt nhân vật trong một bối cảnh đời thường để làm nổi bật sự tương phản với dòng suy nghĩ "bùng nổ" bên trong.
+
+
 """
 
     # Gọi Gemini API
