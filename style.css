@@ -1,0 +1,115 @@
+/* ---- General Styling & Cheerful Background ---- */
+body {
+    font-family: 'Lato', sans-serif; /* Font chữ dễ đọc, hiện đại */
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffefba, #ffc1c1); /* Gradient vàng nhẹ sang hồng cam -> cheerful! */
+    color: #333; /* Màu chữ chính tối dễ đọc */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Đảm bảo nội dung luôn căn giữa màn hình */
+    line-height: 1.6;
+}
+
+/* ---- Main Content Container ---- */
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Nền trắng hơi trong suốt -> modern */
+    padding: 30px 40px;
+    border-radius: 15px; /* Bo góc mềm mại */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ tạo chiều sâu */
+    max-width: 700px; /* Giới hạn chiều rộng cho dễ đọc */
+    width: 90%;
+    text-align: center; /* Căn giữa nội dung trong container */
+    animation: fadeInScaleUp 0.7s ease-out forwards; /* Animation xuất hiện */
+}
+
+/* ---- Header Styling ---- */
+header h1 {
+    font-family: 'Poppins', sans-serif; /* Font tiêu đề nổi bật, vui vẻ */
+    color: #ff6b6b; /* Màu đỏ hồng tươi tắn */
+    font-size: 2.5em; /* Cỡ chữ lớn */
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+header .inspiration {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+header #seed-word {
+    font-weight: bold;
+    color: #4ecdc4; /* Màu xanh ngọc cho từ khóa nổi bật */
+}
+
+/* ---- Ramble Content Card ---- */
+.ramble-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    text-align: left; /* Nội dung ramble căn trái cho dễ đọc */
+    min-height: 100px; /* Chiều cao tối thiểu để giữ layout ổn định khi loading */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi nhẹ */
+}
+
+.ramble-card p {
+    margin: 0; /* Reset margin mặc định của p */
+    font-size: 1.1em;
+    color: #444;
+}
+
+.ramble-card .loading-text {
+    font-style: italic;
+    color: #888;
+    text-align: center; /* Chữ loading căn giữa */
+}
+
+/* ---- Footer Styling ---- */
+footer .update-info {
+    font-size: 0.9em;
+    color: #777;
+}
+
+footer #update-date {
+    font-weight: bold;
+}
+
+/* ---- Animation ---- */
+@keyframes fadeInScaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* ---- Responsive Design ---- */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .ramble-card {
+        padding: 20px;
+    }
+
+    header .inspiration {
+        font-size: 1em;
+    }
+
+     .ramble-card p {
+        font-size: 1em;
+    }
+}
