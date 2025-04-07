@@ -39,7 +39,7 @@ jobs:
         if git diff --quiet data/daily_ramble.json; then # Thay đúng đường dẫn file
           echo "No changes to commit."
         else
-          git add _data/daily_ramble.json # Thay đúng đường dẫn file
+          git add data/daily_ramble.json # Thay đúng đường dẫn file
           git commit -m "Update daily ramble - $(date +'%Y-%m-%d')"
           git push
         fi
