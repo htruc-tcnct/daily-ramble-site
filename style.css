@@ -1,115 +1,273 @@
-/* ---- General Styling & Cheerful Background ---- */
+/* ---- General Styling & SOFTER Vibrant Background ---- */
 body {
-    font-family: 'Lato', sans-serif; /* Font chữ dễ đọc, hiện đại */
+    font-family: 'Lato', sans-serif;
     margin: 0;
-    padding: 20px;
-    background: linear-gradient(135deg, #ffefba, #ffc1c1); /* Gradient vàng nhẹ sang hồng cam -> cheerful! */
-    color: #333; /* Màu chữ chính tối dễ đọc */
+    padding: 0; /* Reset padding */
+    color: #34495e; /* Màu chữ chính - Xám xanh đậm */
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.site-wrapper {
+    min-height: 100vh;
+    padding: 30px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Đảm bảo nội dung luôn căn giữa màn hình */
-    line-height: 1.6;
+    /* Gradient nền MỚI - Teal -> Orchid -> Peach (Dịu hơn) */
+    background: linear-gradient(60deg, #76D7C4 0%, #C39BD3 50%, #FAD7A0 100%);
+    background-size: 150% 150%; /* Cho animation background */
+    animation: gradientBG 20s ease infinite; /* Tăng thời gian animation nền */
+    background-attachment: fixed;
 }
 
-/* ---- Main Content Container ---- */
+/* Animation cho background gradient */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---- Glassmorphism Container (Màu mới & Hiệu ứng) ---- */
 .container {
-    background-color: rgba(255, 255, 255, 0.9); /* Nền trắng hơi trong suốt -> modern */
-    padding: 30px 40px;
-    border-radius: 15px; /* Bo góc mềm mại */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ tạo chiều sâu */
-    max-width: 700px; /* Giới hạn chiều rộng cho dễ đọc */
     width: 90%;
-    text-align: center; /* Căn giữa nội dung trong container */
-    animation: fadeInScaleUp 0.7s ease-out forwards; /* Animation xuất hiện */
+    max-width: 780px; /* Điều chỉnh lại max-width */
+    padding: 35px 45px; /* Điều chỉnh padding */
+    border-radius: 22px; /* Điều chỉnh bo góc */
+
+    /* Hiệu ứng kính mờ */
+    background: rgba(255, 255, 255, 0.4); /* Tăng độ mờ trắng lên chút */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Viền trắng mờ */
+    /* Viền trên MỚI - Màu vàng đào từ gradient */
+    border-top: 6px solid #FAD7A0;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15); /* Điều chỉnh bóng đổ */
+
+    text-align: center;
+    /* Transition cho hiệu ứng hover và mouse move mượt mà */
+    transition: transform 0.1s linear, box-shadow 0.3s ease;
 }
 
-/* ---- Header Styling ---- */
+/* Hiệu ứng khi HOVER vào container (JS sẽ ghi đè transform khi di chuột) */
+.container:hover {
+    box-shadow: 0 14px 45px rgba(0, 0, 0, 0.18);
+    /* Giữ lại transform này để có hiệu ứng khi hover mà không di chuột */
+    /* JS sẽ ghi đè khi chuột di chuyển */
+    /* transform: translateY(-5px); */
+}
+
+/* ---- Header Styling (Màu mới & Responsive) ---- */
 header h1 {
-    font-family: 'Poppins', sans-serif; /* Font tiêu đề nổi bật, vui vẻ */
-    color: #ff6b6b; /* Màu đỏ hồng tươi tắn */
-    font-size: 2.5em; /* Cỡ chữ lớn */
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50; /* Xám xanh đậm nhất */
+    font-size: 2.5em; /* Điều chỉnh cỡ chữ H1 */
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.header-icon {
+    display: inline-block;
+    margin-left: 10px;
+    color: #f39c12; /* Giữ màu vàng cam cho icon */
+    font-size: 0.8em;
+    animation: bounceIcon 1.5s infinite ease-in-out;
+    /* Animation bounceIcon giữ nguyên */
 }
 
 header .inspiration {
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 30px;
+    font-size: 1.05em;
+    color: #57606f;
+    margin-bottom: 28px; /* Điều chỉnh margin */
 }
 
+/* Keyword highlight kiểu MỚI - Dịu hơn */
 header #seed-word {
-    font-weight: bold;
-    color: #4ecdc4; /* Màu xanh ngọc cho từ khóa nổi bật */
+    font-weight: 700; /* Đậm vừa */
+    color: #ffffff; /* Chữ trắng */
+    background: #C39BD3; /* Nền màu tím Orchid từ gradient */
+    padding: 5px 10px; /* Điều chỉnh padding */
+    border-radius: 7px; /* Điều chỉnh bo góc */
+    margin: 0 3px;
+    display: inline-block;
+    box-shadow: 0 2px 6px rgba(195, 155, 211, 0.4); /* Shadow màu tím */
+    transition: transform 0.2s ease;
+}
+header #seed-word:hover {
+    transform: scale(1.08); /* Tăng nhẹ hiệu ứng scale */
 }
 
-/* ---- Ramble Content Card ---- */
-.ramble-card {
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    margin-bottom: 30px;
-    text-align: left; /* Nội dung ramble căn trái cho dễ đọc */
-    min-height: 100px; /* Chiều cao tối thiểu để giữ layout ổn định khi loading */
-    transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi nhẹ */
+/* ---- Ramble Content Area (Màu mới & Viền & Responsive) ---- */
+.ramble-content {
+    margin-top: 18px;
+    margin-bottom: 28px;
+    text-align: left;
+    padding: 20px 20px 20px 22px; /* Điều chỉnh padding */
+    background: rgba(255, 255, 255, 0.18); /* Nền trắng trong hơn */
+    border-radius: 12px; /* Giảm bo góc */
+    min-height: 95px;
+    /* Viền trái MỚI - Màu xanh Teal từ gradient */
+    border-left: 5px solid #76D7C4;
 }
 
-.ramble-card p {
-    margin: 0; /* Reset margin mặc định của p */
+.ramble-content p {
+    margin: 0;
     font-size: 1.1em;
-    color: #444;
+    color: #34495e; /* Màu chữ nội dung */
+    font-weight: 400;
 }
 
-.ramble-card .loading-text {
+.ramble-content .loading-text {
     font-style: italic;
-    color: #888;
-    text-align: center; /* Chữ loading căn giữa */
+    color: #7f8c8d;
+    text-align: center;
 }
 
-/* ---- Footer Styling ---- */
+/* ---- Footer Styling (Giữ nguyên phần lớn) ---- */
+footer {
+    margin-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25); /* Làm đường kẻ rõ hơn */
+    padding-top: 18px;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
 footer .update-info {
-    font-size: 0.9em;
-    color: #777;
+    font-size: 0.85em;
+    color: #57606f;
 }
 
 footer #update-date {
     font-weight: bold;
+    color: #34495e;
 }
 
-/* ---- Animation ---- */
-@keyframes fadeInScaleUp {
+footer .credits {
+    font-size: 0.8em;
+    color: #7f8c8d;
+}
+
+footer .heart {
+    color: #e74c3c;
+    display: inline-block;
+    animation: pulseHeart 1.2s infinite ease-in-out;
+    /* Animation pulseHeart giữ nguyên */
+}
+
+
+/* ---- Animation Keyframes (Giữ lại tất cả) ---- */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes bounceIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pulseHeart {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes fadeInSlideDown {
     from {
         opacity: 0;
-        transform: scale(0.95) translateY(10px);
+        transform: translateY(-15px);
     }
     to {
         opacity: 1;
-        transform: scale(1) translateY(0);
+        transform: translateY(0);
     }
 }
+/* Áp dụng animation load trang */
+.container {
+    animation: fadeInSlideDown 0.7s ease-out forwards;
+}
 
-/* ---- Responsive Design ---- */
-@media (max-width: 600px) {
+
+/* ---- Responsive Design (Tinh chỉnh lại cho chuẩn) ---- */
+
+/* Tablet và màn hình nhỏ hơn */
+@media (max-width: 768px) {
+    .site-wrapper {
+        padding: 25px 15px;
+    }
     .container {
-        padding: 20px;
-        width: 95%;
+        padding: 30px 30px; /* Giảm padding ngang */
+        max-width: 95%;
     }
-
     header h1 {
-        font-size: 2em;
+        font-size: 2.1em;
     }
-
-    .ramble-card {
-        padding: 20px;
-    }
-
     header .inspiration {
         font-size: 1em;
     }
+     .ramble-content p {
+        font-size: 1.05em;
+    }
+    .ramble-content {
+        padding: 15px 15px 15px 18px;
+    }
+}
 
-     .ramble-card p {
+/* Mobile */
+@media (max-width: 600px) {
+    .site-wrapper {
+        padding: 20px 10px;
+    }
+    .container {
+        padding: 25px 20px;
+        border-radius: 18px; /* Điều chỉnh bo góc */
+        /* Giảm hiệu ứng kính mờ trên mobile nếu muốn */
+        /* background: rgba(255, 255, 255, 0.5); */
+        /* backdrop-filter: blur(6px); */
+        /* -webkit-backdrop-filter: blur(6px); */
+    }
+    header h1 {
+        font-size: 1.7em;
+    }
+    .header-icon {
+        font-size: 0.7em;
+        margin-left: 5px;
+    }
+    header .inspiration {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+     .ramble-content p {
         font-size: 1em;
+    }
+    .ramble-content {
+        padding: 15px 15px 15px 15px;
+        border-left-width: 4px; /* Giảm độ dày viền trái */
+        min-height: 80px;
+        border-radius: 10px;
+    }
+     footer p {
+        font-size: 0.75em;
+     }
+     footer .credits {
+        font-size: 0.7em;
+     }
+}
+
+/* Màn hình rất nhỏ */
+@media (max-width: 380px) {
+    .container {
+        padding: 20px 15px;
+    }
+     header h1 {
+        font-size: 1.5em;
+    }
+     header .inspiration {
+        font-size: 0.85em;
+    }
+    .ramble-content p {
+        font-size: 0.95em;
     }
 }

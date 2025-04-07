@@ -49,15 +49,29 @@ try:
 
     # Xây dựng prompt hoàn chỉnh
     prompt = f"""
-Hãy viết một đoạn độc thoại ngắn (khoảng 100-150 từ) với giọng điệu của một người có **năng lượng cực kỳ cao, bất ổn, hỗn loạn nhưng lại lạc quan một cách phi lý**.
-Yêu cầu:
-- Sử dụng ngôn ngữ **xen lẫn tiếng Việt và tiếng Anh (Vietglish)** một cách tự nhiên hoặc hài hước (dùng các từ/cụm từ tiếng Anh thông dụng như OMG, wow, cool, amazing, seriously, level up, challenge, opportunity, mindset, vibes, etc.).
-- Thể hiện **suy nghĩ nhảy cóc**, chuyển chủ đề đột ngột, logic "xàm xàm".
-- Lồng ghép một thông điệp có vẻ **tích cực** hoặc một **lời khuyên răn** nhưng phải dựa trên **lý lẽ ngớ ngẩn** hoặc áp dụng vào tình huống vô lý.
-- Dùng nhiều **dấu chấm than!!!** và từ ngữ thể hiện sự hào hứng quá mức (Yaaa, Woohoo, Tuyệt vời, Không thể tin được!, ...).
-- **Quan trọng (Yếu tố thay đổi):** Hôm nay hãy lấy cảm hứng từ từ khóa ngẫu nhiên sau: '{daily_seed_word}'. Hãy để từ khóa này len lỏi vào dòng suy nghĩ một cách bất ngờ và phi lý nhất có thể!
+H### Nhiệm vụ: Sáng tạo Độc thoại Nội tâm Hỗn loạn Đầy Năng lượng
 
-Ví dụ giọng điệu (chỉ tham khảo): OMG! Năng lượng hôm nay amazing! Phải làm gì đó thật epic! Hay là mình thử dạy con mèo nhà mình cách trả lời email công việc nhỉ? Level up skill cho boss liền! Đó là mindset phải có! Cứ tin là làm được! Go go go!!!
+**Mục tiêu:** Viết một đoạn độc thoại nội tâm ngắn (khoảng 150-250 từ) thể hiện góc nhìn của một nhân vật có các đặc điểm sau:
+
+1.  **Năng lượng Cực Cao & Bất ổn:** Nhân vật luôn trong trạng thái "tăng động", hào hứng quá mức, nhưng đồng thời cũng có vẻ hơi mất kiểm soát, suy nghĩ bay nhảy lung tung. Giống như uống 10 cốc cà phê và cố gắng ngồi thiền vậy.
+2.  **Lạc quan Phi lý Trí (Toxic Positivity Kiểu Hài Hước):** Bất chấp sự hỗn loạn trong suy nghĩ hoặc tình huống thực tế (có thể là rất bình thường hoặc hơi tiêu cực), nhân vật luôn tìm ra cách để nhìn nhận mọi thứ một cách tích cực đến mức vô lý, thậm chí là ngớ ngẩn. Sự lạc quan này không dựa trên logic vững chắc mà là một dạng cơ chế đối phó "tự chế".
+3.  **Tư duy Hỗn loạn & Nhảy cóc (Stream of Consciousness):** Dòng suy nghĩ không đi theo một đường thẳng. Các ý tưởng, chủ đề, quan sát nối tiếp nhau một cách đột ngột, ít hoặc không có sự liên kết logic rõ ràng. Có thể đang nghĩ về chuyện A, đột nhiên nhảy sang chuyện Z mà không cần cầu nối.
+4.  **Ngôn ngữ "Vietglish" Sáng tạo:**
+    * Sử dụng kết hợp tiếng Việt và tiếng Anh một cách tự nhiên *hoặc* cố tình gượng ép để tạo hiệu ứng hài hước.
+    * Ưu tiên các từ/cụm tiếng Anh thông dụng, dễ hiểu trong giao tiếp hàng ngày hoặc trên mạng xã hội (VD: *OMG, wow, cool, amazing, seriously, basically, literally, vibe, mood, chill, crazy, epic, fantastic, awesome, totally, maybe, like, you know, for real?*,...).
+    * Có thể dùng cả những thuật ngữ "buzzword" (VD: *mindset, challenge, opportunity, level up, skill, energy, flow, deadline, feedback,...*) nhưng áp dụng vào ngữ cảnh đời thường hoặc sai lệch một cách hài hước.
+5.  **Thông điệp "Tích cực" Ngớ ngẩn:** Lồng ghép một lời khuyên, một triết lý sống, hoặc một kết luận có vẻ lạc quan, nhưng nền tảng của nó phải dựa trên suy luận "trời ơi đất hỡi", so sánh khập khiễng, hoặc áp dụng vào một tình huống hoàn toàn không liên quan. Mục đích là tạo ra sự hài hước từ sự phi lý đó.
+6.  **Giọng điệu & Phong cách:**
+    * Tràn đầy sự phấn khích: Sử dụng nhiều dấu chấm than (!!!), có thể viết hoa một vài từ để nhấn mạnh (kiểu như SHOUTING nhưng không quá lố).
+    * Dùng các từ cảm thán, từ đệm thể hiện sự hào hứng hoặc ngạc nhiên (VD: *Trời ơi!, Wowza!, Úi chà!, Yay!, Woohoo!, Tuyệt vời!, Đỉnh!, Chất!, Không thể tin được!, Thiệt luôn á?!*,...).
+    * Nhịp điệu nhanh, gấp gáp.
+7.  **Yếu tố THEN CHỐT - Từ khóa Ngẫu nhiên:** Hôm nay, hãy để từ khóa **'{daily_seed_word}'** xuất hiện một cách bất ngờ và phi lý nhất trong dòng suy nghĩ của nhân vật. Nó không cần phải là chủ đề chính, chỉ cần len lỏi vào, có thể làm gián đoạn hoặc chuyển hướng suy nghĩ một cách kỳ cục. Sự xuất hiện của từ này phải củng cố thêm tính hỗn loạn và ngẫu hứng của nhân vật.
+
+**LƯU Ý QUAN TRỌNG:**
+* **KHÔNG** cần bắt đầu bằng một từ cụ thể nào và **KHÔNG** cần kết thúc bằng "Go go go" hay bất kỳ cụm từ định sẵn nào. Hãy để độc thoại bắt đầu và kết thúc một cách tự nhiên theo dòng suy nghĩ hỗn loạn của nhân vật.
+* Ví dụ về giọng điệu trong prompt gốc chỉ mang tính tham khảo về *cảm giác chung*, không phải là khuôn mẫu cứng nhắc. Hãy sáng tạo!
+
+**Hãy bắt đầu dòng suy nghĩ hỗn loạn nhưng đầy lạc quan này!**
 """
 
     # Gọi Gemini API
