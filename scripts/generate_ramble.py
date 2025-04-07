@@ -62,7 +62,8 @@ try:
 
 ---
 **BỐI CẢNH QUAN TRỌNG - Nội dung ngày hôm qua:**
-*Đây là nội dung đã được tạo ngày hôm trước. Vui lòng **TRÁNH LẶP LẠI** ý tưởng, cấu trúc câu hoặc các chi tiết cụ thể quá giống với đoạn này khi tạo nội dung cho hôm nay:*
+
+*Đây là nội dung đã được tạo ngày hôm trước.không được lặp lại câu đầu tiên hay những từ đã được viết trong đoạn văn trước Vui lòng **TRÁNH LẶP LẠI** ý tưởng, cấu trúc câu hoặc các chi tiết cụ thể quá giống với đoạn này khi tạo nội dung cho hôm nay:*
 
 "{previous_ramble}"
 ---
