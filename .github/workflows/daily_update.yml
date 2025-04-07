@@ -3,7 +3,7 @@ name: Update Daily Ramble
 on:
   schedule:
     # Chạy vào 1h sáng UTC mỗi ngày (8h sáng Việt Nam) - Có thể đổi giờ
-    - cron: '0 1 * * *'
+    - cron: '33 12 * * *'
   workflow_dispatch: # Cho phép chạy thủ công
 
 jobs:
