@@ -47,25 +47,18 @@ try:
     daily_seed_word = random.choice(seed_words)
 
     # --- Xây dựng prompt HOÀN CHỈNH (bao gồm nội dung cũ) ---
-    prompt = f"""
-### Nhiệm vụ: Sáng tạo Độc thoại Nội tâm Hỗn loạn Đầy Năng lượng
+    prompt = f"""Mục tiêu: Viết một đoạn độc thoại nội tâm ngắn (khoảng 150-250 từ) thể hiện góc nhìn của một nhân vật với các đặc điểm đã mô tả, nhưng phải đảm bảo sự khác biệt hoàn toàn so với nội dung ngày hôm qua ({previous_ramble}). Tập trung vào việc tạo ra một mạch suy nghĩ, cách diễn đạt và tình huống mới lạ.
 
-**Mục tiêu:** Viết một đoạn độc thoại nội tâm ngắn (khoảng 150-250 từ) thể hiện góc nhìn của một nhân vật có các đặc điểm sau:
+Năng lượng Cực Cao & Bất ổn: Vẫn là cốt lõi, nhưng biểu hiện theo cách khác (VD: không phải là sự phấn khích bề ngoài, mà là dòng suy nghĩ dồn dập, không ngừng nghỉ bên trong).
+Lạc quan Phi lý Trí (Toxic Positivity Kiểu Hài Hước): Tìm một góc độ mới để thể hiện sự lạc quan này, có thể liên quan đến tình huống cụ thể trong độc thoại.
+Tư duy Hỗn loạn & Nhảy cóc (Stream of Consciousness): Cấu trúc dòng suy nghĩ phải khác hôm qua. Thay vì liệt kê, có thể là những câu hỏi dồn dập, những liên tưởng xa vời, sự tự ngắt lời...
+Ngôn ngữ "Vietglish" Sáng tạo: Dùng các từ/cụm từ Vietglish khác hoặc kết hợp chúng theo cách mới. Tránh lặp lại y hệt các ví dụ đã dùng nhiều lần.
+Chốt hạ bằng một Lời Khuyên "Chân Lý" Ngớ Ngẩn: Vẫn giữ yêu cầu này, đặt gần cuối, chỉ MỘT lời khuyên duy nhất, nhưng nội dung lời khuyên phải khác và có vẻ "sâu sắc" một cách hài hước.
+Giọng điệu & Phong cách: Hướng đến sự tự nhiên hơn trong sự hỗn loạn, có thể thêm chút tự giễu hoặc hoang mang nhẹ.
+Yếu tố THEN CHỐT - Từ khóa Ngẫu nhiên: Từ khóa hôm nay là '{daily_seed_word}'. Hãy để nó xen vào một cách bất ngờ, nhưng có thể liên kết (dù chỉ là mong manh) với dòng suy nghĩ trước đó hoặc sau đó.
+BỐI CẢNH QUAN TRỌNG - Nội dung ngày hôm qua:
 
-1.  **Năng lượng Cực Cao & Bất ổn:** ... (Giữ nguyên) ...
-2.  **Lạc quan Phi lý Trí (Toxic Positivity Kiểu Hài Hước):** ... (Giữ nguyên) ...
-3.  **Tư duy Hỗn loạn & Nhảy cóc (Stream of Consciousness):** ... (Giữ nguyên) ...
-4.  **Ngôn ngữ "Vietglish" Sáng tạo:** ... (Giữ nguyên các ví dụ) ...
-5.  **Chốt hạ bằng một Lời Khuyên "Chân Lý" Ngớ Ngẩn:** ***Gần cuối*** đoạn độc thoại (khoảng 1-2 câu cuối), hãy đưa ra ***MỘT*** lời khuyên ... (Như đã sửa ở trên) ...
-6.  **Giọng điệu & Phong cách:** ... (Giữ nguyên các ví dụ) ...
-7.  **Yếu tố THEN CHỐT - Từ khóa Ngẫu nhiên:** Hôm nay, hãy để từ khóa **'{daily_seed_word}'** xuất hiện một cách bất ngờ ... (Giữ nguyên) ...
----
-**BỐI CẢNH QUAN TRỌNG - Nội dung ngày hôm qua:**
-
-*Đây là nội dung đã được tạo ngày hôm trước.không được lặp lại câu đầu tiên hay những từ đã được viết trong đoạn văn trước Vui lòng không dùng cấu trúc và casch viết như hôm qua khi tạo nội dung cho hôm nay, hãy tạo một cách viết mới và tinh tế hơn hôm qua: *
-
-"{previous_ramble}"
----
+Nội dung đã tạo ngày hôm qua là {previous_ramble}. Tuyệt đối không lặp lại câu mở đầu, các ý tưởng chính, cấu trúc câu hay cách dùng từ đặc trưng của đoạn văn này. Phải tạo ra một trải nghiệm đọc hoàn toàn khác biệt.
 """
 
     # Gọi Gemini API
