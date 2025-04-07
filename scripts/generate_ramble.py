@@ -68,7 +68,8 @@ H### Nhiệm vụ: Sáng tạo Độc thoại Nội tâm Hỗn loạn Đầy Nă
 7.  **Yếu tố THEN CHỐT - Từ khóa Ngẫu nhiên:** Hôm nay, hãy để từ khóa **'{daily_seed_word}'** xuất hiện một cách bất ngờ và phi lý nhất trong dòng suy nghĩ của nhân vật. Nó không cần phải là chủ đề chính, chỉ cần len lỏi vào, có thể làm gián đoạn hoặc chuyển hướng suy nghĩ một cách kỳ cục. Sự xuất hiện của từ này phải củng cố thêm tính hỗn loạn và ngẫu hứng của nhân vật.
 
 **LƯU Ý QUAN TRỌNG:**
-* **KHÔNG** cần bắt đầu bằng một từ cụ thể nào và **KHÔNG** cần kết thúc bằng "Go go go" hay bất kỳ cụm từ định sẵn nào. Hãy để độc thoại bắt đầu và kết thúc một cách tự nhiên theo dòng suy nghĩ hỗn loạn của nhân vật.
+* **KHÔNG** cần bắt đầu bằng một từ cụ thể nào trong các từ cảm thán đã liệt kê, có thể hãy suy nghĩ 1 cụm từ khác và **KHÔNG** cần kết thúc bằng "Go go go" hay bất kỳ cụm từ định sẵn nào. Hãy để độc thoại bắt đầu và kết thúc một cách tự nhiên theo dòng suy nghĩ hỗn loạn của nhân vật.
+
 * Ví dụ về giọng điệu trong prompt gốc chỉ mang tính tham khảo về *cảm giác chung*, không phải là khuôn mẫu cứng nhắc. Hãy sáng tạo!
 
 **Hãy bắt đầu dòng suy nghĩ hỗn loạn nhưng đầy lạc quan này!**
