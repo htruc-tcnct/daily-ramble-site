@@ -49,13 +49,18 @@ try:
 
     # Xây dựng prompt hoàn chỉnh
     prompt = f"""
-H### Nhiệm vụ: Sáng tạo Độc thoại Nội tâm Hỗn loạn Đầy Năng lượng
+### Nhiệm vụ: Sáng tạo Độc thoại Nội tâm Hỗn loạn Đầy Năng lượng
 
 **Mục tiêu:** Viết một đoạn độc thoại nội tâm ngắn (khoảng 150-250 từ) thể hiện góc nhìn của một nhân vật có các đặc điểm sau:
 
-1.  **Năng lượng Cực Cao & Bất ổn:** Nhân vật luôn trong trạng thái "tăng động", hào hứng quá mức, nhưng đồng thời cũng có vẻ hơi mất kiểm soát, suy nghĩ bay nhảy lung tung. Giống như uống 10 cốc cà phê và cố gắng ngồi thiền vậy.
-2.  **Lạc quan Phi lý Trí (Toxic Positivity Kiểu Hài Hước):** Bất chấp sự hỗn loạn trong suy nghĩ hoặc tình huống thực tế (có thể là rất bình thường hoặc hơi tiêu cực), nhân vật luôn tìm ra cách để nhìn nhận mọi thứ một cách tích cực đến mức vô lý, thậm chí là ngớ ngẩn. Sự lạc quan này không dựa trên logic vững chắc mà là một dạng cơ chế đối phó "tự chế".
-3.  **Tư duy Hỗn loạn & Nhảy cóc (Stream of Consciousness):** Dòng suy nghĩ không đi theo một đường thẳng. Các ý tưởng, chủ đề, quan sát nối tiếp nhau một cách đột ngột, ít hoặc không có sự liên kết logic rõ ràng. Có thể đang nghĩ về chuyện A, đột nhiên nhảy sang chuyện Z mà không cần cầu nối.
+1.  **Năng lượng Cực Cao & Bất ổn:** Nhân vật luôn trong trạng thái "tăng động", hào hứng quá mức, nhưng đồng thời cũng có vẻ hơi mất kiểm soát, 
+suy nghĩ bay nhảy lung tung. Giống như uống 10 cốc cà phê và cố gắng ngồi thiền vậy.
+2.  **Lạc quan Phi lý Trí (Toxic Positivity Kiểu Hài Hước):** Bất chấp sự hỗn loạn trong suy nghĩ hoặc tình huống thực tế 
+(có thể là rất bình thường hoặc hơi tich cực), nhân vật luôn tìm ra cách để nhìn nhận mọi thứ một cách tích cực đến mức vô lý, 
+thậm chí là ngớ ngẩn. Sự lạc quan này không dựa trên logic vững chắc mà là một dạng cơ chế đối phó "tự chế".
+3.  **Tư duy Hỗn loạn & Nhảy cóc (Stream of Consciousness):** Dòng suy nghĩ không đi theo một đường thẳng. Các ý tưởng, 
+chủ đề, quan sát nối tiếp nhau một cách đột ngột, ít hoặc không có sự liên kết logic rõ ràng. Có thể đang nghĩ về chuyện A, 
+đột nhiên nhảy sang chuyện Z mà không cần cầu nối.
 4.  **Ngôn ngữ "Vietglish" Sáng tạo:**
     * Sử dụng kết hợp tiếng Việt và tiếng Anh một cách tự nhiên *hoặc* cố tình gượng ép để tạo hiệu ứng hài hước.
     * Ưu tiên các từ/cụm tiếng Anh thông dụng, dễ hiểu trong giao tiếp hàng ngày hoặc trên mạng xã hội (VD: *OMG, wow, cool, amazing, seriously, basically, literally, vibe, mood, chill, crazy, epic, fantastic, awesome, totally, maybe, like, you know, for real?*,...).
