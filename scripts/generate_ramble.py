@@ -48,21 +48,21 @@ try:
 
     # --- Xây dựng prompt HOÀN CHỈNH (bao gồm nội dung cũ) ---
     prompt = f"""
-    Nhiệm vụ: Viết một đoạn độc thoại ngắn từ góc nhìn của một nhân vật đang trải qua một ngày bình thường, nhưng mọi thứ trong đầu họ như một cơn bão. Họ đang bước qua những suy nghĩ lộn xộn, những mảnh ký ức không liên quan, và những hình ảnh thoáng qua. Mỗi suy nghĩ như một mảnh ghép ngẫu nhiên, thỉnh thoảng lại gặp phải những giây phút "ngừng lại" ngắn ngủi để thở, nhưng ngay lập tức bị cuốn đi bởi những suy nghĩ khác. Đoạn độc thoại này phải có ảnh hưởng tinh tế từ từ khóa của ngày hôm nay {daily_seed_word}, và tuyệt đối tránh lặp lại từ khóa của hôm trước {previous_ramble}.
+Nhiệm vụ: Viết một đoạn độc thoại ngắn từ góc nhìn của một nhân vật đang trải qua một ngày bình thường, nhưng mọi thứ trong đầu họ như một cơn bão. Họ đang bước qua những suy nghĩ lộn xộn, những mảnh ký ức không liên quan, và những hình ảnh thoáng qua. Mỗi suy nghĩ như một mảnh ghép ngẫu nhiên, thỉnh thoảng lại có những khoảnh khắc tĩnh lặng ngắn ngủi, nhưng ngay lập tức những suy nghĩ khác lại ùa vào. Đoạn độc thoại này phải thể hiện sự ảnh hưởng tinh tế từ từ khóa của ngày hôm nay {daily_seed_word}, và tuyệt đối tránh lặp lại từ khóa của hôm trước {previous_ramble}.
 
 Yêu cầu về "Chất liệu" bên trong:
 
-Nhịp điệu tự nhiên: Mặc dù suy nghĩ khá dồn dập, nhưng phải giữ được cảm giác nhẹ nhàng, không quá căng thẳng hay vội vàng. Hãy để cho các ý tưởng tự do "lang thang" trong đầu, như thể chúng xuất hiện rồi biến mất mà không bị ép buộc.
+Nhịp điệu tự nhiên: Suy nghĩ của nhân vật có thể rất dồn dập, nhưng vẫn cần duy trì sự nhẹ nhàng và không quá căng thẳng. Những ý tưởng như thể tự do lang thang trong đầu, không bị ép buộc hay theo một trật tự cụ thể.
 
-Lạc Quan nhẹ nhàng: Giữ sự tươi mới và tích cực, nhưng không phải quá lố, chỉ đơn giản là tìm thấy một chút niềm vui trong sự bình thường của cuộc sống. Không cần phải "phóng đại" mọi thứ, nhưng hãy để mọi suy nghĩ mang một chút ánh sáng vui vẻ.
+Lạc Quan nhẹ nhàng: Dù suy nghĩ có thể hỗn loạn, nhưng vẫn phải mang một chút tươi mới và tích cực. Nhân vật không cần phải "phóng đại" mọi thứ, mà chỉ đơn giản tìm thấy niềm vui trong sự bình thường của cuộc sống.
 
-Ngôn ngữ nhẹ nhàng, đời thường: Sử dụng những từ ngữ tự nhiên và gần gũi, như thể nhân vật đang trò chuyện với chính mình. Chú ý đừng sử dụng các từ ngữ quá phô trương hay khoa trương, chỉ cần phản ánh một tâm trạng sống động, đầy năng lượng trong một bối cảnh bình thường.
+Ngôn ngữ nhẹ nhàng, đời thường: Sử dụng ngôn ngữ tự nhiên, gần gũi như thể nhân vật đang trò chuyện với chính mình. Tránh sử dụng từ ngữ phô trương hay quá khoa trương, mà chỉ phản ánh sự sống động và năng lượng trong một bối cảnh giản dị.
 
-Từ khóa nhẹ nhàng, tinh tế: Chọn một từ khóa cho ngày hôm nay {daily_seed_word} và để từ khóa này xuất hiện một cách tự nhiên trong suy nghĩ của nhân vật. Từ khóa sẽ ảnh hưởng đến cách nhân vật nhìn nhận sự việc, nhưng đừng làm nó quá rõ rệt hoặc phô trương. Đảm bảo không lặp lại từ khóa của hôm trước {previous_ramble}.
+Từ khóa nhẹ nhàng, tinh tế: Từ khóa của ngày hôm nay {daily_seed_word} sẽ được tích hợp một cách tự nhiên vào suy nghĩ của nhân vật. Đảm bảo rằng từ khóa này có sự ảnh hưởng nhẹ nhàng, không quá nổi bật hay phô trương. Đồng thời, tuyệt đối tránh lặp lại từ khóa của hôm trước {previous_ramble}.
 
-Khoảnh khắc hài hước nhẹ: Cuối đoạn, tạo một khoảnh khắc nhỏ mà nhân vật nhận ra một sự thật giản đơn nhưng lại khiến họ mỉm cười vì sự ngớ ngẩn của chính mình.
+Khoảnh khắc hài hước nhẹ: Kết thúc đoạn độc thoại bằng một khoảnh khắc hài hước nhẹ nhàng, nơi nhân vật nhận ra một sự thật giản đơn nhưng lại khiến họ mỉm cười vì sự ngớ ngẩn của chính mình.
 
-Mục tiêu là tạo ra một dòng suy nghĩ thoải mái, dễ chịu, với một chút vui vẻ và sáng tạo, trong khi vẫn giữ cho câu chuyện chân thật và gần gũi, đồng thời tránh sự lặp lại từ khóa của ngày hôm trước.
+Mục tiêu là tạo ra một dòng suy nghĩ thoải mái, dễ chịu, vui vẻ và sáng tạo, trong khi vẫn giữ cho câu chuyện chân thật và gần gũi. Cố gắng tránh sự lặp lại từ khóa của ngày hôm trước và mang lại một sự mới mẻ cho mỗi ngày.
 """
 
     # Gọi Gemini API
