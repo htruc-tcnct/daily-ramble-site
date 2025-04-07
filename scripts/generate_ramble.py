@@ -48,28 +48,21 @@ try:
 
     # --- Xây dựng prompt HOÀN CHỈNH (bao gồm nội dung cũ) ---
     prompt = f"""
-Nhiệm vụ: Hãy hóa thân và viết một đoạn độc thoại nội tâm ngắn (khoảng 150-250 từ) của một nhân vật mà tâm trí họ giống như một trình duyệt web mở 50 tab cùng lúc, nhạc nhảy bật volume max, và vừa uống liền 3 ly cà phê đậm. Đoạn độc thoại này cần phản ánh sự ảnh hưởng tinh tế từ từ khóa của ngày hôm đó.
+    Nhiệm vụ: Viết một đoạn độc thoại ngắn từ góc nhìn của một nhân vật đang trải qua một ngày bình thường, nhưng mọi thứ trong đầu họ như một cơn bão. Họ đang bước qua những suy nghĩ lộn xộn, những mảnh ký ức không liên quan, và những hình ảnh thoáng qua. Mỗi suy nghĩ như một mảnh ghép ngẫu nhiên, thỉnh thoảng lại gặp phải những giây phút "ngừng lại" ngắn ngủi để thở, nhưng ngay lập tức bị cuốn đi bởi những suy nghĩ khác. Đoạn độc thoại này phải có ảnh hưởng tinh tế từ từ khóa của ngày hôm nay {daily_seed_word}, và tuyệt đối tránh lặp lại từ khóa của hôm trước {previous_ramble}.
 
 Yêu cầu về "Chất liệu" bên trong:
 
-Nhịp điệu Nền Tảng: Vẫn là suy nghĩ dồn dập, không đi theo đường thẳng, nhảy ý liên tục, câu chữ như đang "nhảy múa". Đây là cốt lõi không đổi.
-"Filter" Lạc Quan (Kiểu Hài): Vẫn giữ lăng kính tích cực hơi lố, biến mọi thứ thành "tín hiệu vũ trụ" hoặc cơ hội "level up" một cách hài hước.
-Ngôn ngữ "Hybrid" Tự Nhiên: Tiếp tục sử dụng Vietglish đời thường, sáng tạo ("OMG", "seriously?", "chốt đơn", "on top", "deadline dí", "so deep", "flex", "vibe"...).
-Ảnh Hưởng Tinh Tế Từ Từ Khóa ({daily_seed_word}): Đây là điểm mới quan trọng:
-Cảm nhận 'Năng Lượng' Từ Khóa: Hãy xem xét ý nghĩa, sắc thái, hoặc cảm giác mà {daily_seed_word} gợi ra.
-Điều Chỉnh Phong Cách Nhẹ Nhàng: Để 'năng lượng' này thoáng ảnh hưởng đến giọng điệu hoặc dòng suy nghĩ. Ví dụ:
-Nếu từ khóa là "yên bình", có thể có một khoảnh khắc suy tư ngắn, một câu hỏi về sự tĩnh lặng xen giữa mớ hỗn độn (nhưng rồi nhanh chóng bị dòng khác cuốn đi).
-Nếu từ khóa là "bùng nổ", nhịp điệu có thể càng nhanh, nhiều dấu chấm than hơn.
-Nếu từ khóa là "ẩm thực", liên tưởng về mùi vị, hình ảnh món ăn có thể xuất hiện rõ nét hơn.
-Quan Trọng: Sự điều chỉnh này phải tinh tế, không làm mất đi bản chất năng lượng cao, hỗn loạn và lạc quan cốt lõi của nhân vật. Nó giống như thêm một chút "gia vị" khác nhau mỗi ngày.
-Tích Hợp Từ Khóa: Từ khóa {daily_seed_word} phải xuất hiện trong đoạn văn. Nó có thể là điểm bắt đầu cho sự ảnh hưởng tinh tế nói trên, hoặc đơn giản là một yếu tố xen ngang bất ngờ.
-Khoảnh khắc "Eureka!" Ngớ Ngẩn: Vẫn kết thúc bằng MỘT câu "chân lý" hoặc lời khuyên độc đáo, nghe sâu sắc nhưng thực chất lại vô tri hoặc hài hước (gần cuối đoạn, 1-2 câu).
-Thách Thức Sáng Tạo:
+Nhịp điệu tự nhiên: Mặc dù suy nghĩ khá dồn dập, nhưng phải giữ được cảm giác nhẹ nhàng, không quá căng thẳng hay vội vàng. Hãy để cho các ý tưởng tự do "lang thang" trong đầu, như thể chúng xuất hiện rồi biến mất mà không bị ép buộc.
 
-Quên Hẳn Hôm Qua: Tuyệt đối tránh lặp lại nội dung ({previous_ramble}) và phong cách của ngày hôm trước. Mỗi ngày là một bản phối mới dựa trên cùng một nền nhạc.
-Bối Cảnh Gợi Ý (Không bắt buộc): Vẫn có thể đặt nhân vật trong một bối cảnh đời thường để làm nổi bật sự tương phản với dòng suy nghĩ "bùng nổ" bên trong.
+Lạc Quan nhẹ nhàng: Giữ sự tươi mới và tích cực, nhưng không phải quá lố, chỉ đơn giản là tìm thấy một chút niềm vui trong sự bình thường của cuộc sống. Không cần phải "phóng đại" mọi thứ, nhưng hãy để mọi suy nghĩ mang một chút ánh sáng vui vẻ.
 
+Ngôn ngữ nhẹ nhàng, đời thường: Sử dụng những từ ngữ tự nhiên và gần gũi, như thể nhân vật đang trò chuyện với chính mình. Chú ý đừng sử dụng các từ ngữ quá phô trương hay khoa trương, chỉ cần phản ánh một tâm trạng sống động, đầy năng lượng trong một bối cảnh bình thường.
 
+Từ khóa nhẹ nhàng, tinh tế: Chọn một từ khóa cho ngày hôm nay {daily_seed_word} và để từ khóa này xuất hiện một cách tự nhiên trong suy nghĩ của nhân vật. Từ khóa sẽ ảnh hưởng đến cách nhân vật nhìn nhận sự việc, nhưng đừng làm nó quá rõ rệt hoặc phô trương. Đảm bảo không lặp lại từ khóa của hôm trước {previous_ramble}.
+
+Khoảnh khắc hài hước nhẹ: Cuối đoạn, tạo một khoảnh khắc nhỏ mà nhân vật nhận ra một sự thật giản đơn nhưng lại khiến họ mỉm cười vì sự ngớ ngẩn của chính mình.
+
+Mục tiêu là tạo ra một dòng suy nghĩ thoải mái, dễ chịu, với một chút vui vẻ và sáng tạo, trong khi vẫn giữ cho câu chuyện chân thật và gần gũi, đồng thời tránh sự lặp lại từ khóa của ngày hôm trước.
 """
 
     # Gọi Gemini API
