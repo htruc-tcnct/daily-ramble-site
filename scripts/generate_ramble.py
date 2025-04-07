@@ -66,12 +66,6 @@ try:
 
 "{previous_ramble}"
 ---
-
-**LƯU Ý QUAN TRỌNG:**
-* **KHÔNG** cần bắt đầu bằng ... (Giữ nguyên) ...
-* Ví dụ về giọng điệu ... (Giữ nguyên) ...
-
-**Hãy bắt đầu dòng suy nghĩ hỗn loạn nhưng đầy lạc quan MỚI MẺ cho hôm nay!**
 """
 
     # Gọi Gemini API
